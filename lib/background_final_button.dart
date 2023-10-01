@@ -95,22 +95,41 @@ class BackgroundFinalButton extends StatelessWidget {
                                 style: buttonTextStyle,
                               ),
                       )
-                    : FloatingActionButton(
-                        shape: finishButtonStyle?.shape,
-                        elevation: finishButtonStyle?.elevation,
-                        focusElevation: finishButtonStyle?.focusElevation,
-                        hoverElevation: finishButtonStyle?.hoverElevation,
-                        highlightElevation:
-                            finishButtonStyle?.highlightElevation,
-                        disabledElevation: finishButtonStyle?.disabledElevation,
-                        foregroundColor: finishButtonStyle?.foregroundColor,
-                        backgroundColor: finishButtonStyle?.backgroundColor,
-                        focusColor: finishButtonStyle?.focusColor,
-                        hoverColor: finishButtonStyle?.hoverColor,
-                        splashColor: finishButtonStyle?.splashColor,
-                        onPressed: () => _goToNextPage(context),
-                        child: skipText != null ? skipText : skipIcon,
-                      ),
+                    : skipText != null
+                        ? FloatingActionButton.large(
+                            shape: finishButtonStyle?.shape,
+                            elevation: finishButtonStyle?.elevation,
+                            focusElevation: finishButtonStyle?.focusElevation,
+                            hoverElevation: finishButtonStyle?.hoverElevation,
+                            highlightElevation:
+                                finishButtonStyle?.highlightElevation,
+                            disabledElevation:
+                                finishButtonStyle?.disabledElevation,
+                            foregroundColor: finishButtonStyle?.foregroundColor,
+                            backgroundColor: finishButtonStyle?.backgroundColor,
+                            focusColor: finishButtonStyle?.focusColor,
+                            hoverColor: finishButtonStyle?.hoverColor,
+                            splashColor: finishButtonStyle?.splashColor,
+                            onPressed: () => _goToNextPage(context),
+                            child: skipText,
+                          )
+                        : FloatingActionButton(
+                            shape: finishButtonStyle?.shape,
+                            elevation: finishButtonStyle?.elevation,
+                            focusElevation: finishButtonStyle?.focusElevation,
+                            hoverElevation: finishButtonStyle?.hoverElevation,
+                            highlightElevation:
+                                finishButtonStyle?.highlightElevation,
+                            disabledElevation:
+                                finishButtonStyle?.disabledElevation,
+                            foregroundColor: finishButtonStyle?.foregroundColor,
+                            backgroundColor: finishButtonStyle?.backgroundColor,
+                            focusColor: finishButtonStyle?.focusColor,
+                            hoverColor: finishButtonStyle?.hoverColor,
+                            splashColor: finishButtonStyle?.splashColor,
+                            onPressed: () => _goToNextPage(context),
+                            child: skipIcon,
+                          ),
               )
             : Container(
                 padding: EdgeInsets.symmetric(horizontal: 30),
