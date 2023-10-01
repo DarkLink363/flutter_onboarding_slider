@@ -92,7 +92,7 @@ class OnBoardingSlider extends StatefulWidget {
   /// icon on the skip button
   final Icon skipIcon;
 
-  final Text? skipText;
+  final Widget? skipText;
 
   /// is the indicator located on top of the screen
   final bool indicatorAbove;

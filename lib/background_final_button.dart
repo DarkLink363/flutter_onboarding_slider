@@ -44,7 +44,7 @@ class BackgroundFinalButton extends StatelessWidget {
   final String? buttonText;
   final bool hasSkip;
   final Icon skipIcon;
-  final Text? skipText;
+  final Widget? skipText;
   final FinishButtonStyle? finishButtonStyle;
 
   BackgroundFinalButton({
