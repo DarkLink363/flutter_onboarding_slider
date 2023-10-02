@@ -71,7 +71,7 @@ class BackgroundFinalButton extends StatelessWidget {
                 padding: currentPage == totalPage - 1
                     ? EdgeInsets.symmetric(horizontal: 30)
                     : EdgeInsets.all(0),
-                width: currentPage == totalPage - 1
+                width: currentPage == totalPage - 1 || skipExtended
                     ? MediaQuery.of(context).size.width - 30
                     : 60,
                 duration: Duration(milliseconds: 100),
@@ -113,7 +113,12 @@ class BackgroundFinalButton extends StatelessWidget {
                             hoverColor: finishButtonStyle?.hoverColor,
                             splashColor: finishButtonStyle?.splashColor,
                             onPressed: () => _goToNextPage(context),
-                            label: skipText != null ? skipText! : Text('Dalej'),
+                            label: skipText != null
+                                ? skipText!
+                                : Text(
+                                    'Dalej',
+                                    style: buttonTextStyle,
+                                  ),
                           )
                         : FloatingActionButton(
                             shape: finishButtonStyle?.shape,
