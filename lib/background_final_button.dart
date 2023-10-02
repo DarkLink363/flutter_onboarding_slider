@@ -68,7 +68,7 @@ class BackgroundFinalButton extends StatelessWidget {
     return addButton
         ? hasSkip
             ? AnimatedContainer(
-                padding: currentPage == totalPage - 1
+                padding: currentPage == totalPage - 1 || skipExtended
                     ? EdgeInsets.symmetric(horizontal: 30)
                     : EdgeInsets.all(0),
                 width: currentPage == totalPage - 1 || skipExtended
