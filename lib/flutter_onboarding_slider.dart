@@ -51,6 +51,8 @@ class OnBoardingSlider extends StatefulWidget {
   /// Style of the bottom button on the last page.
   final FinishButtonStyle? finishButtonStyle;
 
+  final FinishButtonStyle? skipButtonStyle;
+
   /// Text inside last pages bottom button.
   final String? finishButtonText;
 
@@ -120,6 +122,7 @@ class OnBoardingSlider extends StatefulWidget {
     this.pageBackgroundColor,
     this.pageBackgroundGradient,
     this.finishButtonStyle,
+    this.skipButtonStyle,
     this.finishButtonText,
     this.controllerColor,
     this.addController = true,
@@ -178,6 +181,7 @@ class _OnBoardingSliderState extends State<OnBoardingSlider> {
                 totalPage: widget.totalPage,
                 onPageFinish: widget.onFinish,
                 finishButtonStyle: widget.finishButtonStyle,
+                skipButtonStyle: widget.skipButtonStyle,
                 buttonText: widget.finishButtonText,
                 hasSkip: widget.hasSkip,
                 skipExtended: widget.skipExtended,

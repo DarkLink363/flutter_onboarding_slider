@@ -47,6 +47,7 @@ class BackgroundFinalButton extends StatelessWidget {
   final Widget? skipText;
   final bool skipExtended;
   final FinishButtonStyle? finishButtonStyle;
+  final FinishButtonStyle? skipButtonStyle;
 
   BackgroundFinalButton({
     required this.currentPage,
@@ -61,6 +62,7 @@ class BackgroundFinalButton extends StatelessWidget {
     this.skipText,
     this.skipExtended = false,
     this.finishButtonStyle = const FinishButtonStyle(),
+    this.skipButtonStyle = const FinishButtonStyle(),
   });
 
   @override
@@ -99,19 +101,19 @@ class BackgroundFinalButton extends StatelessWidget {
                       )
                     : skipExtended
                         ? FloatingActionButton.extended(
-                            shape: finishButtonStyle?.shape,
-                            elevation: finishButtonStyle?.elevation,
-                            focusElevation: finishButtonStyle?.focusElevation,
-                            hoverElevation: finishButtonStyle?.hoverElevation,
+                            shape: skipButtonStyle?.shape,
+                            elevation: skipButtonStyle?.elevation,
+                            focusElevation: skipButtonStyle?.focusElevation,
+                            hoverElevation: skipButtonStyle?.hoverElevation,
                             highlightElevation:
-                                finishButtonStyle?.highlightElevation,
+                                skipButtonStyle?.highlightElevation,
                             disabledElevation:
-                                finishButtonStyle?.disabledElevation,
-                            foregroundColor: finishButtonStyle?.foregroundColor,
-                            backgroundColor: finishButtonStyle?.backgroundColor,
-                            focusColor: finishButtonStyle?.focusColor,
-                            hoverColor: finishButtonStyle?.hoverColor,
-                            splashColor: finishButtonStyle?.splashColor,
+                                skipButtonStyle?.disabledElevation,
+                            foregroundColor: skipButtonStyle?.foregroundColor,
+                            backgroundColor: skipButtonStyle?.backgroundColor,
+                            focusColor: skipButtonStyle?.focusColor,
+                            hoverColor: skipButtonStyle?.hoverColor,
+                            splashColor: skipButtonStyle?.splashColor,
                             onPressed: () => _goToNextPage(context),
                             label: skipText != null
                                 ? skipText!
