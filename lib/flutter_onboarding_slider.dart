@@ -94,6 +94,8 @@ class OnBoardingSlider extends StatefulWidget {
 
   final Widget? skipText;
 
+  final bool skipExtended;
+
   /// is the indicator located on top of the screen
   final bool indicatorAbove;
 
@@ -141,6 +143,7 @@ class OnBoardingSlider extends StatefulWidget {
     this.indicatorPosition = 90,
     this.skipFunctionOverride,
     this.hideNavigationBar = false,
+    this.skipExtended = false,
     this.skipText,
   });
 
@@ -177,6 +180,7 @@ class _OnBoardingSliderState extends State<OnBoardingSlider> {
                 finishButtonStyle: widget.finishButtonStyle,
                 buttonText: widget.finishButtonText,
                 hasSkip: widget.hasSkip,
+                skipExtended: widget.skipExtended,
               )
             : SizedBox.shrink(),
         body: CupertinoPageScaffold(

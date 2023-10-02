@@ -45,6 +45,7 @@ class BackgroundFinalButton extends StatelessWidget {
   final bool hasSkip;
   final Icon skipIcon;
   final Widget? skipText;
+  final bool skipExtended;
   final FinishButtonStyle? finishButtonStyle;
 
   BackgroundFinalButton({
@@ -58,6 +59,7 @@ class BackgroundFinalButton extends StatelessWidget {
     required this.hasSkip,
     required this.skipIcon,
     this.skipText,
+    this.skipExtended = false,
     this.finishButtonStyle = const FinishButtonStyle(),
   });
 
@@ -95,22 +97,41 @@ class BackgroundFinalButton extends StatelessWidget {
                                 style: buttonTextStyle,
                               ),
                       )
-                    : FloatingActionButton(
-                        shape: finishButtonStyle?.shape,
-                        elevation: finishButtonStyle?.elevation,
-                        focusElevation: finishButtonStyle?.focusElevation,
-                        hoverElevation: finishButtonStyle?.hoverElevation,
-                        highlightElevation:
-                            finishButtonStyle?.highlightElevation,
-                        disabledElevation: finishButtonStyle?.disabledElevation,
-                        foregroundColor: finishButtonStyle?.foregroundColor,
-                        backgroundColor: finishButtonStyle?.backgroundColor,
-                        focusColor: finishButtonStyle?.focusColor,
-                        hoverColor: finishButtonStyle?.hoverColor,
-                        splashColor: finishButtonStyle?.splashColor,
-                        onPressed: () => _goToNextPage(context),
-                        child: skipText != null ? skipText : skipIcon,
-                      ),
+                    : skipExtended
+                        ? FloatingActionButton.extended(
+                            shape: finishButtonStyle?.shape,
+                            elevation: finishButtonStyle?.elevation,
+                            focusElevation: finishButtonStyle?.focusElevation,
+                            hoverElevation: finishButtonStyle?.hoverElevation,
+                            highlightElevation:
+                                finishButtonStyle?.highlightElevation,
+                            disabledElevation:
+                                finishButtonStyle?.disabledElevation,
+                            foregroundColor: finishButtonStyle?.foregroundColor,
+                            backgroundColor: finishButtonStyle?.backgroundColor,
+                            focusColor: finishButtonStyle?.focusColor,
+                            hoverColor: finishButtonStyle?.hoverColor,
+                            splashColor: finishButtonStyle?.splashColor,
+                            onPressed: () => _goToNextPage(context),
+                            label: skipText != null ? skipText! : Text('Dalej'),
+                          )
+                        : FloatingActionButton(
+                            shape: finishButtonStyle?.shape,
+                            elevation: finishButtonStyle?.elevation,
+                            focusElevation: finishButtonStyle?.focusElevation,
+                            hoverElevation: finishButtonStyle?.hoverElevation,
+                            highlightElevation:
+                                finishButtonStyle?.highlightElevation,
+                            disabledElevation:
+                                finishButtonStyle?.disabledElevation,
+                            foregroundColor: finishButtonStyle?.foregroundColor,
+                            backgroundColor: finishButtonStyle?.backgroundColor,
+                            focusColor: finishButtonStyle?.focusColor,
+                            hoverColor: finishButtonStyle?.hoverColor,
+                            splashColor: finishButtonStyle?.splashColor,
+                            onPressed: () => _goToNextPage(context),
+                            child: skipText != null ? skipText : skipIcon,
+                          ),
               )
             : Container(
                 padding: EdgeInsets.symmetric(horizontal: 30),
